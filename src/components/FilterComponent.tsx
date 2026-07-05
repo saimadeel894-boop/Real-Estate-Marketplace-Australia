@@ -1,7 +1,15 @@
 
 
 import { CheckCircle2, SlidersHorizontal } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
+const useRouter = () => ({
+  push: (url: string) => {
+    if (typeof window !== "undefined") window.location.href = url;
+  },
+});
+const useSearchParams = () => {
+  if (typeof window === "undefined") return new URLSearchParams();
+  return new URLSearchParams(window.location.search);
+};
 import { useState } from "react";
 import { propertyTypes, states } from "@/data/marketplace";
 
