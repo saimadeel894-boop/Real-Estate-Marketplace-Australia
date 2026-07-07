@@ -23,6 +23,12 @@ export const Route = createFileRoute("/")({
         content:
           "Buy, rent, sell and discover premium homes across Australia in a polished marketplace experience.",
       },
+      { property: "og:image", content: heroPoster },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: heroPoster },
+    ],
+    links: [
+      { rel: "preload", as: "image", href: heroPoster, fetchpriority: "high" },
     ],
   }),
   component: Home,
