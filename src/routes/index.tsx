@@ -53,6 +53,14 @@ function Home() {
   return (
     <>
       <section className="relative isolate min-h-[92vh] overflow-hidden bg-slate-950">
+        <img
+          src={heroPoster}
+          alt="Luxury Australian coastal home at dusk"
+          fetchPriority="high"
+          width={1920}
+          height={1280}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
@@ -60,7 +68,7 @@ function Home() {
           loop
           playsInline
           preload="metadata"
-          poster="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=2200&q=80"
+          poster={heroPoster}
           aria-hidden="true"
         >
           <source
@@ -72,12 +80,6 @@ function Home() {
             type="video/mp4"
           />
         </video>
-        <img
-          src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=2200&q=80"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover -z-10"
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/50 to-slate-950/80" />
 
         <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-4 py-24 text-center sm:px-6 lg:px-8">
