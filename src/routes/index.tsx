@@ -73,8 +73,11 @@ function Home() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           poster={heroPoster}
+          width={1920}
+          height={1080}
+          disableRemotePlayback
           aria-hidden="true"
         >
           <source
