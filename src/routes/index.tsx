@@ -59,58 +59,68 @@ function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoFailed, setVideoFailed] = useState(false);
+  const [inView, setInView] = useState(false);
 
+  // Observe visibility + wire error/playing listeners.
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || typeof IntersectionObserver === "undefined") return;
+    if (!video) return;
 
     const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
+    if (prefersReducedMotion) return;
+
+    const markFailed = () => setVideoFailed(true);
+    video.addEventListener("error", markFailed);
+
+    if (typeof IntersectionObserver === "undefined") {
+      setInView(true);
+      return () => video.removeEventListener("error", markFailed);
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.15 },
+    );
+    observer.observe(video);
+    return () => {
+      observer.disconnect();
+      video.removeEventListener("error", markFailed);
+    };
+  }, []);
+
+  // Trigger source injection on first visibility.
+  useEffect(() => {
+    if (inView && !videoLoaded) setVideoLoaded(true);
+  }, [inView, videoLoaded]);
+
+  // After sources are in the DOM, load and play; pause when offscreen.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !videoLoaded) return;
+
+    if (!inView) {
       video.pause();
       return;
     }
 
-    let loadTimer: ReturnType<typeof setTimeout> | null = null;
+    video.preload = "auto";
+    video.load();
 
-    const markFailed = () => {
-      setVideoFailed(true);
-      video.pause();
-    };
+    const timer = setTimeout(() => {
+      if (video.readyState < 3 || video.paused) setVideoFailed(true);
+    }, 4000);
 
-    const onPlaying = () => {
-      if (loadTimer) clearTimeout(loadTimer);
-    };
+    const onPlaying = () => clearTimeout(timer);
     video.addEventListener("playing", onPlaying);
-    video.addEventListener("error", markFailed);
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          if (!videoLoaded) {
-            setVideoLoaded(true);
-            video.preload = "auto";
-            video.load();
-            // If playback hasn't started within 3s, fall back to the poster.
-            loadTimer = setTimeout(() => {
-              if (video.readyState < 3 || video.paused) markFailed();
-            }, 3000);
-          }
-          void video.play().catch(markFailed);
-        } else {
-          video.pause();
-        }
-      },
-      { threshold: 0.15 },
-    );
+    void video.play().catch(() => setVideoFailed(true));
 
-    observer.observe(video);
     return () => {
-      observer.disconnect();
-      if (loadTimer) clearTimeout(loadTimer);
+      clearTimeout(timer);
       video.removeEventListener("playing", onPlaying);
-      video.removeEventListener("error", markFailed);
     };
-  }, [videoLoaded]);
+  }, [videoLoaded, inView]);
+
 
 
 
