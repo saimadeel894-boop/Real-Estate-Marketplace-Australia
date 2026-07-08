@@ -152,6 +152,63 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           },
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Is Nestoria Australia free to use for buyers and renters?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Browsing listings, saving properties, contacting agents and booking inspections on Nestoria Australia is completely free for buyers and renters.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How do I list a property for sale or rent?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Create a free account, then use the List a property flow to add photos, description, price and inspection times. Your listing is reviewed and published within one business day.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Which Australian cities and suburbs are covered?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Nestoria covers every capital city — Sydney, Melbourne, Brisbane, Perth, Adelaide, Hobart, Darwin and Canberra — plus major regional centres across NSW, VIC, QLD, WA, SA, TAS, NT and ACT.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How do I contact a listing agent?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Every property detail page includes the listing agent's profile, phone number and an enquiry form. Messages are delivered to the agent instantly and copied to your Nestoria inbox.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Can I save searches and get alerts for new listings?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Signed-in users can save searches by suburb, price and property type, and receive email alerts whenever matching new listings go live.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How are listings verified?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Every listing is submitted by a verified agent or vendor and quality-checked by the Nestoria team for accurate address, price, photography and inspection details before going live.",
+              },
+            },
+          ],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
