@@ -12,54 +12,62 @@ export function AgentCard({ agent }: AgentCardProps) {
   const agency = getAgencyById(agent.agencyId);
 
   return (
-    <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+    <article className="group rounded-3xl border border-border/70 bg-surface p-6 shadow-soft transition duration-500 hover:-translate-y-1 hover:shadow-luxury">
       <div className="flex gap-4">
-        <Image
-          src={agent.image}
-          alt={agent.name}
-          width={88}
-          height={88}
-          className="size-22 rounded-lg object-cover"
-        />
-        <div className="min-w-0">
-          <Link href={`/agents/${agent.id}`} className="text-lg font-bold text-slate-950 hover:text-emerald-800">
+        <div className="relative">
+          <Image
+            src={agent.image}
+            alt={agent.name}
+            width={96}
+            height={96}
+            className="size-24 rounded-2xl object-cover"
+          />
+          <span className="absolute -bottom-2 -right-2 flex items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold text-primary-foreground shadow-soft">
+            <Star size={11} className="fill-current" aria-hidden="true" />
+            {agent.rating}
+          </span>
+        </div>
+        <div className="min-w-0 flex-1">
+          <Link
+            href={`/agents/${agent.id}`}
+            className="font-serif text-xl leading-tight text-charcoal transition hover:text-primary"
+          >
             {agent.name}
           </Link>
-          <p className="mt-1 text-sm font-semibold text-slate-600">{agent.title}</p>
-          <Link href={`/agencies/${agency.id}`} className="mt-1 block text-sm text-emerald-800 hover:text-emerald-900">
+          <p className="mt-1 text-sm text-charcoal-soft">{agent.title}</p>
+          <Link
+            href={`/agencies/${agency.id}`}
+            className="mt-2 block text-xs font-medium uppercase tracking-widest text-primary hover:underline"
+          >
             {agency.name}
           </Link>
-          <p className="mt-2 flex items-center gap-1.5 text-sm font-semibold text-slate-700">
-            <Star size={16} className="fill-amber-400 text-amber-400" aria-hidden="true" />
-            {agent.rating} rating
-          </p>
         </div>
       </div>
 
-      <div className="mt-5 grid grid-cols-2 gap-3 border-y border-slate-100 py-4 text-sm">
+      <div className="mt-6 grid grid-cols-2 gap-3 border-y border-border/70 py-4">
         <div>
-          <p className="font-bold text-slate-950">{agent.activeListings}</p>
-          <p className="text-slate-500">Active listings</p>
+          <p className="font-serif text-2xl text-charcoal">{agent.activeListings}</p>
+          <p className="text-xs text-muted-foreground">Active listings</p>
         </div>
         <div>
-          <p className="font-bold text-slate-950">{agent.soldLastYear}</p>
-          <p className="text-slate-500">Sold last year</p>
+          <p className="font-serif text-2xl text-charcoal">{agent.soldLastYear}</p>
+          <p className="text-xs text-muted-foreground">Sold last year</p>
         </div>
       </div>
 
-      <div className="mt-4 grid gap-2 sm:grid-cols-2">
+      <div className="mt-5 grid gap-2 sm:grid-cols-2">
         <a
           href={`tel:${agent.phone.replace(/\s/g, "")}`}
-          className="flex h-10 items-center justify-center gap-2 rounded-md border border-slate-200 text-sm font-bold text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800"
+          className="flex h-11 items-center justify-center gap-2 rounded-full border border-border text-sm font-medium text-charcoal transition hover:border-primary hover:text-primary"
         >
-          <Phone size={16} aria-hidden="true" />
+          <Phone size={15} aria-hidden="true" />
           Call
         </a>
         <a
           href={`mailto:${agent.email}`}
-          className="flex h-10 items-center justify-center gap-2 rounded-md bg-slate-950 text-sm font-bold text-white transition hover:bg-emerald-800"
+          className="flex h-11 items-center justify-center gap-2 rounded-full bg-charcoal text-sm font-medium text-background transition hover:bg-primary"
         >
-          <Mail size={16} aria-hidden="true" />
+          <Mail size={15} aria-hidden="true" />
           Email
         </a>
       </div>
