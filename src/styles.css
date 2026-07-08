@@ -48,18 +48,18 @@
 :root {
   --radius: 1rem;
 
-  /* Brand — warm orange on off-white ink */
-  --background: oklch(0.985 0.005 85);          /* #FAFAF7 */
-  --surface: oklch(0.965 0.007 85);
-  --foreground: oklch(0.20 0.02 265);           /* #101828 */
-  --ink: oklch(0.20 0.02 265);
+  /* Brand — premium orange on very-light-gray with charcoal ink */
+  --background: oklch(0.98 0 0);                /* #FAFAFA */
+  --surface: oklch(0.955 0 0);                  /* #F2F2F2 */
+  --foreground: oklch(0.18 0 0);                /* #1A1A1A charcoal */
+  --ink: oklch(0.18 0 0);
 
   --card: oklch(1 0 0);
   --card-foreground: var(--foreground);
   --popover: oklch(1 0 0);
   --popover-foreground: var(--foreground);
 
-  --primary: oklch(0.68 0.185 46);              /* #F26B1D */
+  --primary: oklch(0.673 0.181 43);             /* #F26B1D premium orange */
   --primary-foreground: oklch(0.99 0.005 85);
 
   --secondary: oklch(0.96 0.008 85);
