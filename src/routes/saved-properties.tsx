@@ -30,8 +30,10 @@ export const Route = createFileRoute("/saved-properties")({
           "@context": "https://schema.org",
           "@type": "SearchResultsPage",
           name: "Saved properties",
-          url: "/saved-properties",
-          isPartOf: { "@id": "/#website" },
+          url: "https://project--a0d96297-61d4-4523-ae1a-a95bf868e3f0.lovable.app/saved-properties",
+          isPartOf: {
+            "@id": "https://project--a0d96297-61d4-4523-ae1a-a95bf868e3f0.lovable.app/#website",
+          },
           about: {
             "@type": "Thing",
             name: "Saved property searches on Nestoria Australia",
@@ -41,13 +43,15 @@ export const Route = createFileRoute("/saved-properties")({
             name: "Search saved properties",
             target: {
               "@type": "EntryPoint",
-              urlTemplate: "/saved-properties?q={search_term_string}",
+              urlTemplate:
+                "https://project--a0d96297-61d4-4523-ae1a-a95bf868e3f0.lovable.app/saved-properties?q={search_term_string}",
             },
             "query-input": "required name=search_term_string",
           },
         }),
       },
     ],
+
   }),
   component: SavedProperties,
 });
