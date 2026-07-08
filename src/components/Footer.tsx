@@ -1,4 +1,4 @@
-import { Building2, Mail, MapPin, MessageCircle, Phone, Share2, Users } from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import { Link } from "@/components/compat/Link";
 
 const footerGroups = [
@@ -16,14 +16,14 @@ const footerGroups = [
     links: [
       { href: "/about", label: "About us" },
       { href: "/contact", label: "Contact" },
-      { href: "/blog", label: "Blog" },
+      { href: "/blog", label: "Insights" },
       { href: "/dashboard", label: "Dashboard" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { href: "/blog", label: "Market insights" },
+      { href: "/blog", label: "Market reports" },
       { href: "/search", label: "Suburb guides" },
       { href: "/blog", label: "Buyer guides" },
       { href: "/blog", label: "Rental advice" },
@@ -33,35 +33,38 @@ const footerGroups = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-slate-950 text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.4fr_2fr] lg:px-8">
+    <footer className="relative overflow-hidden bg-charcoal text-background">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 right-0 h-96 w-96 rounded-full bg-primary/25 blur-3xl"
+      />
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.3fr_2fr] lg:px-8">
         <div>
           <Link href="/" className="flex items-center gap-3" aria-label="Nestoria Australia home">
-            <span className="flex size-11 items-center justify-center rounded-md bg-emerald-500 text-slate-950">
-              <Building2 size={23} aria-hidden="true" />
+            <span className="flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <span className="font-serif text-2xl leading-none">N</span>
             </span>
             <span>
-              <span className="block text-xl font-bold leading-none">Nestoria</span>
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
+              <span className="block font-serif text-2xl leading-none">Nestoria</span>
+              <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-primary">
                 Australia
               </span>
             </span>
           </Link>
-          <p className="mt-5 max-w-md text-sm leading-6 text-slate-300">
-            A modern Australian property marketplace concept for buying, renting, selling, and
-            discovering homes with confidence.
+          <p className="mt-6 max-w-md font-serif text-2xl leading-snug text-background/85">
+            Where Australia&rsquo;s most considered homes meet their next chapter.
           </p>
-          <div className="mt-6 space-y-3 text-sm text-slate-300">
+          <div className="mt-8 space-y-3 text-sm text-background/70">
             <p className="flex items-center gap-3">
-              <MapPin size={17} aria-hidden="true" />
-              Sydney, Melbourne, Brisbane, Perth and beyond
+              <MapPin size={16} className="text-primary" aria-hidden="true" />
+              Sydney &middot; Melbourne &middot; Brisbane &middot; Perth
             </p>
             <p className="flex items-center gap-3">
-              <Phone size={17} aria-hidden="true" />
+              <Phone size={16} className="text-primary" aria-hidden="true" />
               1300 000 123
             </p>
             <p className="flex items-center gap-3">
-              <Mail size={17} aria-hidden="true" />
+              <Mail size={16} className="text-primary" aria-hidden="true" />
               hello@nestoria.example
             </p>
           </div>
@@ -70,13 +73,16 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-3">
           {footerGroups.map((group) => (
             <div key={group.title}>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-emerald-300">
+              <h2 className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
                 {group.title}
               </h2>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-5 space-y-3">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="text-sm text-slate-300 transition hover:text-white">
+                    <Link
+                      href={link.href}
+                      className="text-sm text-background/75 transition hover:text-primary"
+                    >
                       {link.label}
                     </Link>
                   </li>
@@ -87,17 +93,19 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-5 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <p>&copy; 2026 Nestoria Australia. Frontend prototype.</p>
+      <div className="relative border-t border-background/10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-sm text-background/60 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <p>&copy; 2026 Nestoria Australia &mdash; Handcrafted for discerning homeowners.</p>
           <div className="flex items-center gap-2">
-            {[MessageCircle, Share2, Users].map((Icon, index) => (
-              <span
-                key={index}
-                className="flex size-9 items-center justify-center rounded-md border border-white/10 text-slate-300"
+            {[Instagram, Twitter, Linkedin].map((Icon, i) => (
+              <a
+                key={i}
+                href="#"
+                className="flex size-9 items-center justify-center rounded-full border border-background/15 text-background/70 transition hover:border-primary hover:text-primary"
+                aria-label="Social link"
               >
-                <Icon size={17} aria-hidden="true" />
-              </span>
+                <Icon size={15} aria-hidden="true" />
+              </a>
             ))}
           </div>
         </div>
