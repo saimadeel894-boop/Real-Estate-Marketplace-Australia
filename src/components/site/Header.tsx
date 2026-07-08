@@ -36,9 +36,9 @@ export function SiteHeader() {
   }
 
   const transparent = isHome && !scrolled && !open;
-  const shellClass = transparent
-    ? "absolute inset-x-0 top-0 z-40 text-white"
-    : "sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur text-ink";
+  const shellClass = isHome
+    ? `fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${transparent ? "text-white" : "bg-background/95 backdrop-blur border-b border-border text-ink"}`
+    : "sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur text-ink";
   const linkColor = transparent
     ? "text-white/85 hover:text-white"
     : "text-ink/70 hover:text-ink";
