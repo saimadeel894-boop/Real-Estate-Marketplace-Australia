@@ -58,6 +58,7 @@ function Home() {
   const latestProperties = properties.slice(3);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoFailed, setVideoFailed] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -69,6 +70,19 @@ function Home() {
       return;
     }
 
+    let loadTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const markFailed = () => {
+      setVideoFailed(true);
+      video.pause();
+    };
+
+    const onPlaying = () => {
+      if (loadTimer) clearTimeout(loadTimer);
+    };
+    video.addEventListener("playing", onPlaying);
+    video.addEventListener("error", markFailed);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -76,8 +90,12 @@ function Home() {
             setVideoLoaded(true);
             video.preload = "auto";
             video.load();
+            // If playback hasn't started within 3s, fall back to the poster.
+            loadTimer = setTimeout(() => {
+              if (video.readyState < 3 || video.paused) markFailed();
+            }, 3000);
           }
-          void video.play().catch(() => {});
+          void video.play().catch(markFailed);
         } else {
           video.pause();
         }
@@ -86,8 +104,14 @@ function Home() {
     );
 
     observer.observe(video);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (loadTimer) clearTimeout(loadTimer);
+      video.removeEventListener("playing", onPlaying);
+      video.removeEventListener("error", markFailed);
+    };
   }, [videoLoaded]);
+
 
 
   return (
@@ -103,7 +127,7 @@ function Home() {
         />
         <video
           ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${videoFailed ? "opacity-0" : "opacity-100"}`}
           autoPlay
           muted
           loop
