@@ -14,94 +14,104 @@ export function PropertyCard({ property, compact = false }: PropertyCardProps) {
   const agent = getAgentForProperty(property);
 
   return (
-    <article className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-slate-950/10">
-      <Link href={`/properties/${property.id}`} className="group block">
-        <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+    <article className="group overflow-hidden rounded-3xl border border-border/70 bg-surface shadow-soft transition duration-500 hover:-translate-y-1 hover:shadow-luxury">
+      <Link href={`/properties/${property.id}`} className="block">
+        <div className="relative aspect-[4/3] overflow-hidden bg-muted">
           <Image
             src={property.images[0]}
             alt={property.title}
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover transition duration-500 group-hover:scale-105"
+            loading="lazy"
+            className="object-cover transition duration-[900ms] ease-out group-hover:scale-110"
           />
-          <div className="absolute left-3 top-3 flex flex-wrap gap-2">
-            <span className="rounded-md bg-white/95 px-2.5 py-1 text-xs font-bold text-emerald-800 shadow-sm">
-              {property.mode}
-            </span>
-            <span className="rounded-md bg-emerald-800 px-2.5 py-1 text-xs font-bold text-white shadow-sm">
-              {property.propertyType}
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-70" />
+
+          <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+            <span className="rounded-full bg-background/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-charcoal shadow-soft">
+              For {property.mode}
             </span>
             {property.tags.slice(0, 1).map((tag) => (
               <span
                 key={tag}
-                className="rounded-md bg-slate-950/85 px-2.5 py-1 text-xs font-bold text-white backdrop-blur"
+                className="rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary-foreground shadow-soft"
               >
                 {tag}
               </span>
             ))}
           </div>
+
           <SaveButton
             label={property.title}
-            className="absolute right-3 top-3 flex size-10 items-center justify-center rounded-md bg-white/95 text-slate-700 shadow-sm transition hover:text-rose-600"
+            className="absolute right-4 top-4 flex size-10 items-center justify-center rounded-full bg-background/95 text-charcoal-soft shadow-soft transition hover:text-primary"
           />
+
+          <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+            <div className="text-background">
+              <p className="text-xs font-medium uppercase tracking-widest text-background/80">
+                {property.propertyType}
+              </p>
+              <p className="mt-1 font-serif text-2xl leading-none">{property.priceLabel}</p>
+            </div>
+            <span className="rounded-full bg-background/95 px-3 py-1.5 text-xs font-medium text-charcoal shadow-soft opacity-0 transition group-hover:opacity-100">
+              Quick view
+            </span>
+          </div>
         </div>
       </Link>
 
-      <div className={compact ? "p-4" : "p-5"}>
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="text-xl font-bold text-slate-950">{property.priceLabel}</p>
-            <h3 className="mt-2 line-clamp-2 text-base font-semibold leading-6 text-slate-900">
-              <Link href={`/properties/${property.id}`} className="hover:text-emerald-800">
-                {property.title}
-              </Link>
-            </h3>
-          </div>
-        </div>
+      <div className={compact ? "p-5" : "p-6"}>
+        <h3 className="line-clamp-2 font-serif text-xl leading-snug text-charcoal">
+          <Link href={`/properties/${property.id}`} className="transition hover:text-primary">
+            {property.title}
+          </Link>
+        </h3>
 
-        <p className="mt-3 flex items-center gap-2 text-sm text-slate-600">
-          <MapPin size={16} className="shrink-0 text-emerald-700" aria-hidden="true" />
+        <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
+          <MapPin size={15} className="shrink-0 text-primary" aria-hidden="true" />
           <span className="truncate">
-            {property.address}, {property.suburb}, {property.state} {property.postcode}
+            {property.suburb}, {property.state} {property.postcode}
           </span>
         </p>
 
-        <div className="mt-4 grid grid-cols-4 gap-2 border-y border-slate-100 py-3 text-sm font-semibold text-slate-700">
+        <div className="mt-5 grid grid-cols-4 gap-2 border-t border-border/70 pt-4 text-sm text-charcoal-soft">
           <span className="flex items-center gap-1.5">
-            <BedDouble size={17} aria-hidden="true" />
+            <BedDouble size={16} className="text-primary" aria-hidden="true" />
             {property.bedrooms}
           </span>
           <span className="flex items-center gap-1.5">
-            <Bath size={17} aria-hidden="true" />
+            <Bath size={16} className="text-primary" aria-hidden="true" />
             {property.bathrooms}
           </span>
           <span className="flex items-center gap-1.5">
-            <Car size={17} aria-hidden="true" />
+            <Car size={16} className="text-primary" aria-hidden="true" />
             {property.parking}
           </span>
-          <span className="truncate text-right text-xs text-slate-500">{property.landSize}</span>
+          <span className="truncate text-right text-xs text-muted-foreground">
+            {property.landSize}
+          </span>
         </div>
 
         {!compact && (
-          <div className="mt-4 flex items-center justify-between gap-3">
-            <div className="flex items-center gap-2">
+          <div className="mt-5 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2.5">
               <Image
                 src={agent.image}
                 alt={agent.name}
-                width={32}
-                height={32}
-                className="size-8 rounded-md object-cover"
+                width={36}
+                height={36}
+                className="size-9 rounded-full object-cover ring-2 ring-primary-soft"
               />
               <div>
-                <p className="text-xs font-bold text-slate-900">{agent.name}</p>
-                <p className="text-xs text-slate-500">{property.listedAt}</p>
+                <p className="text-xs font-semibold text-charcoal">{agent.name}</p>
+                <p className="text-[11px] text-muted-foreground">{property.listedAt}</p>
               </div>
             </div>
             <Link
               href={`/properties/${property.id}`}
-              className="rounded-md border border-slate-200 px-3 py-2 text-xs font-bold text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800"
+              className="rounded-full border border-border px-4 py-2 text-xs font-medium text-charcoal transition hover:border-primary hover:bg-primary hover:text-primary-foreground"
             >
-              View Details
+              View
             </Link>
           </div>
         )}

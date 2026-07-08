@@ -1,128 +1,118 @@
-
-
 import {
-  Building2,
   Heart,
-  Home,
-  LayoutDashboard,
   LogIn,
   Menu,
-  PlusCircle,
-  Search,
   X,
 } from "lucide-react";
 import { Link } from "@/components/compat/Link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/search", label: "Search", icon: Search },
-  { href: "/list-property", label: "List", icon: PlusCircle },
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-];
-
-const mobileMoreLinks = [
-  { href: "/saved-properties", label: "Saved properties" },
-  { href: "/agents/mia-carter", label: "Agent profile" },
-  { href: "/agencies/harbour-north", label: "Agency profile" },
-  { href: "/about", label: "About us" },
-  { href: "/contact", label: "Contact us" },
-  { href: "/blog", label: "Blog" },
+  { href: "/search?mode=buy", label: "Buy" },
+  { href: "/search?mode=rent", label: "Rent" },
+  { href: "/list-property", label: "Sell" },
+  { href: "/agents/mia-carter", label: "Agents" },
+  { href: "/blog", label: "Insights" },
+  { href: "/about", label: "About" },
 ];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 12);
+    handler();
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-border/70 bg-background/85 backdrop-blur-xl"
+          : "border-b border-transparent bg-background/60 backdrop-blur-md"
+      }`}
+    >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label="Nestoria Australia home">
-          <span className="flex size-10 items-center justify-center rounded-md bg-emerald-700 text-white shadow-sm">
-            <Building2 size={22} aria-hidden="true" />
+        <Link href="/" className="flex items-center gap-2.5" aria-label="Nestoria Australia home">
+          <span className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft">
+            <span className="font-serif text-xl leading-none">N</span>
           </span>
-          <span>
-            <span className="block text-lg font-bold leading-none text-slate-950">Nestoria</span>
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
+          <span className="leading-tight">
+            <span className="block font-serif text-xl text-charcoal">Nestoria</span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-primary">
               Australia
             </span>
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => {
-            const Icon = link.icon;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950"
-              >
-                <Icon size={16} aria-hidden="true" />
-                {link.label}
-              </Link>
-            );
-          })}
+        <div className="hidden items-center gap-1 lg:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="relative rounded-full px-4 py-2 text-sm font-medium text-charcoal-soft transition hover:text-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
         <div className="flex items-center gap-2">
           <Link
             href="/saved-properties"
-            className="hidden size-10 items-center justify-center rounded-md border border-slate-200 text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800 sm:flex"
+            className="hidden size-10 items-center justify-center rounded-full border border-border text-charcoal-soft transition hover:border-primary hover:text-primary sm:flex"
             aria-label="Saved properties"
-            title="Saved properties"
           >
-            <Heart size={18} aria-hidden="true" />
+            <Heart size={17} aria-hidden="true" />
           </Link>
           <Link
             href="/login"
-            className="flex items-center gap-2 rounded-md bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800"
+            className="hidden items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-medium text-charcoal transition hover:border-primary hover:text-primary sm:flex"
           >
-            <LogIn size={16} aria-hidden="true" />
-            Login
+            <LogIn size={15} aria-hidden="true" />
+            Sign in
+          </Link>
+          <Link
+            href="/list-property"
+            className="hidden items-center gap-2 rounded-full bg-charcoal px-4 py-2.5 text-sm font-medium text-background shadow-soft transition hover:bg-primary md:inline-flex"
+          >
+            List property
           </Link>
           <button
             type="button"
-            onClick={() => setOpen((current) => !current)}
-            className="flex size-10 items-center justify-center rounded-md border border-slate-200 text-slate-700 transition hover:bg-slate-100 md:hidden"
+            onClick={() => setOpen((v) => !v)}
+            className="flex size-10 items-center justify-center rounded-full border border-border text-charcoal-soft transition hover:border-primary hover:text-primary lg:hidden"
             aria-label="Toggle mobile menu"
             aria-expanded={open}
           >
-            {open ? <X size={19} aria-hidden="true" /> : <Menu size={19} aria-hidden="true" />}
+            {open ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
           </button>
         </div>
       </nav>
 
-      <div className="border-t border-slate-100 px-4 pb-3 md:hidden">
-        <div className="mx-auto grid max-w-7xl grid-cols-4 gap-2">
-          {navLinks.map((link) => {
-            const Icon = link.icon;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="flex min-h-11 flex-col items-center justify-center gap-1 rounded-md text-xs font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-emerald-800"
-              >
-                <Icon size={17} aria-hidden="true" />
-                {link.label}
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-
       {open ? (
-        <div className="border-t border-slate-100 bg-white px-4 py-3 md:hidden">
-          <div className="mx-auto grid max-w-7xl gap-2">
-            {mobileMoreLinks.map((link) => (
+        <div className="border-t border-border bg-background lg:hidden">
+          <div className="mx-auto grid max-w-7xl gap-1 px-4 py-4 sm:px-6">
+            {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-emerald-800"
+                className="rounded-lg px-3 py-3 text-base font-medium text-charcoal-soft transition hover:bg-primary-soft hover:text-primary"
               >
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/list-property"
+              onClick={() => setOpen(false)}
+              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
+            >
+              List your property
+            </Link>
           </div>
         </div>
       ) : null}
