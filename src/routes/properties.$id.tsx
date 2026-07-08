@@ -111,25 +111,30 @@ export const Route = createFileRoute("/properties/$id")({
             },
             aggregateRating: {
               "@type": "AggregateRating",
-              ratingValue: agent?.rating ?? 4.8,
+              ratingValue: (
+                testimonials.reduce((s, t) => s + t.rating, 0) / testimonials.length
+              ).toFixed(2),
               bestRating: 5,
               worstRating: 1,
-              reviewCount: agent?.soldLastYear ?? 42,
+              reviewCount: testimonials.length,
             },
-            review: agent
-              ? [
-                  {
-                    "@type": "Review",
-                    reviewRating: {
-                      "@type": "Rating",
-                      ratingValue: agent.rating,
-                      bestRating: 5,
-                    },
-                    author: { "@type": "Person", name: "Verified Nestoria buyer" },
-                    reviewBody: `Working with ${agent.name} on ${property.suburb} listings was seamless — professional presentation, honest guidance, and swift communication throughout.`,
-                  },
-                ]
-              : undefined,
+            review: testimonials.map((t) => ({
+              "@type": "Review",
+              itemReviewed: {
+                "@type": "Residence",
+                name: property.title,
+                url: path,
+              },
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: t.rating,
+                bestRating: 5,
+                worstRating: 1,
+              },
+              author: { "@type": "Person", name: t.author },
+              datePublished: t.datePublished,
+              reviewBody: t.body,
+            })),
           }),
         },
         {
