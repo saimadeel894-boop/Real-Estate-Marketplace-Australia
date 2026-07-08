@@ -5,6 +5,7 @@ import { ArrowRight, Building2, MapPin, ShieldCheck, TrendingUp } from "lucide-r
 import { Link } from "@/components/compat/Link";
 import heroPoster from "@/assets/hero-poster.jpg";
 import heroVideo from "@/assets/hero-video.mp4";
+import heroVideoWebm from "@/assets/hero-video.webm";
 import { AgentCard } from "@/components/AgentCard";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SearchComponent } from "@/components/SearchComponent";
@@ -194,7 +195,10 @@ function Home() {
           aria-hidden="true"
         >
           {videoLoaded && (
-            <source src={heroVideo} type="video/mp4" />
+            <>
+              <source src={heroVideoWebm} type="video/webm" />
+              <source src={heroVideo} type="video/mp4" />
+            </>
           )}
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/50 to-slate-950/80" />
