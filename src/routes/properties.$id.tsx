@@ -321,6 +321,52 @@ function PropertyPage() {
         </aside>
       </div>
 
+      <section className="mt-16">
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <h2 className="text-2xl font-bold text-slate-950">Reviews</h2>
+            <p className="mt-1 text-sm text-slate-600">
+              What buyers and neighbours are saying about listings in {property.suburb}.
+            </p>
+          </div>
+          <p className="text-sm font-semibold text-slate-700">
+            {(
+              testimonials.reduce((s, t) => s + t.rating, 0) / testimonials.length
+            ).toFixed(1)}{" "}
+            / 5 · {testimonials.length} reviews
+          </p>
+        </div>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {testimonials.map((t) => (
+            <article
+              key={t.author}
+              className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm"
+            >
+              <Quote size={18} className="text-emerald-700" aria-hidden="true" />
+              <p className="mt-3 text-sm leading-6 text-slate-700">{t.body}</p>
+              <div className="mt-4 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-bold text-slate-950">{t.author}</p>
+                  <p className="text-xs text-slate-500">
+                    {t.role} ·{" "}
+                    <time dateTime={t.datePublished}>
+                      {new Date(t.datePublished).toLocaleDateString("en-AU", {
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </time>
+                  </p>
+                </div>
+                <span className="flex items-center gap-1 text-sm font-semibold text-amber-600">
+                  <Star size={14} className="fill-amber-400 text-amber-400" aria-hidden="true" />
+                  {t.rating.toFixed(1)}
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {similar.length > 0 && (
         <section className="mt-16">
           <h2 className="text-2xl font-bold text-slate-950">Similar properties</h2>
