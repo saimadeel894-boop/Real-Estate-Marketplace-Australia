@@ -499,7 +499,7 @@ function Home() {
                   src={bento[3].images[0]}
                   alt={bento[3].title}
                   fill
-                  sizes="(min-width: 768px) 25vw, 100vw"
+                  sizes="(min-width: 768px) 75vw, 100vw"
                   className="object-cover opacity-70 transition duration-700 group-hover:scale-110 group-hover:opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] to-transparent" />
