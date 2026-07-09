@@ -16,7 +16,7 @@ export function ContactForm() {
         form.reportValidity();
       }}
     >
-      <label className="block text-sm font-semibold text-slate-700">
+      <label className="block text-caption font-semibold text-charcoal">
         Name
         <span className="relative mt-2 block">
           <User
@@ -32,7 +32,7 @@ export function ContactForm() {
           />
         </span>
       </label>
-      <label className="block text-sm font-semibold text-slate-700">
+      <label className="block text-caption font-semibold text-charcoal">
         Email
         <span className="relative mt-2 block">
           <Mail
@@ -48,7 +48,7 @@ export function ContactForm() {
           />
         </span>
       </label>
-      <label className="block text-sm font-semibold text-slate-700">
+      <label className="block text-caption font-semibold text-charcoal">
         Topic
         <select className="mt-2 h-12 w-full rounded-md border border-slate-200 bg-white px-3 outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
           <option>General enquiry</option>
@@ -57,7 +57,7 @@ export function ContactForm() {
           <option>Advertising</option>
         </select>
       </label>
-      <label className="block text-sm font-semibold text-slate-700">
+      <label className="block text-caption font-semibold text-charcoal">
         Message
         <span className="relative mt-2 block">
           <MessageCircle

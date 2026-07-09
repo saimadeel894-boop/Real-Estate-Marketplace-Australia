@@ -59,13 +59,13 @@ export function QuickViewModal({ property, open, onClose }: QuickViewModalProps)
             className="object-cover"
           />
           <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-            <span className="rounded-full bg-background/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-charcoal shadow-soft">
+            <span className="rounded-full bg-background/95 px-3 py-1 text-eyebrow text-charcoal shadow-soft">
               For {property.mode}
             </span>
             {property.tags.slice(0, 1).map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary-foreground shadow-soft"
+                className="rounded-full bg-primary px-3 py-1 text-eyebrow text-primary-foreground shadow-soft"
               >
                 {tag}
               </span>
@@ -74,23 +74,23 @@ export function QuickViewModal({ property, open, onClose }: QuickViewModalProps)
         </div>
 
         <div className="flex flex-1 flex-col overflow-y-auto p-6 md:p-8">
-          <p className="text-xs font-medium uppercase tracking-widest text-primary">
+          <p className="text-eyebrow text-primary">
             {property.propertyType}
           </p>
           <h2
             id={`quickview-${property.id}`}
-            className="mt-2 font-serif text-2xl leading-tight text-charcoal md:text-3xl"
+            className="mt-2 font-serif text-h3 text-charcoal text-balance"
           >
             {property.title}
           </h2>
-          <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
+          <p className="mt-2 flex items-center gap-2 text-caption text-muted-foreground">
             <MapPin size={15} className="text-primary" aria-hidden="true" />
             {property.suburb}, {property.state} {property.postcode}
           </p>
 
-          <p className="mt-4 font-serif text-3xl text-charcoal">{property.priceLabel}</p>
+          <p className="mt-4 font-serif text-h2 text-charcoal">{property.priceLabel}</p>
 
-          <div className="mt-5 grid grid-cols-4 gap-3 border-y border-border/70 py-4 text-sm text-charcoal-soft">
+          <div className="mt-5 grid grid-cols-4 gap-3 border-y border-border/70 py-4 text-caption text-charcoal-soft">
             <span className="flex flex-col items-start gap-1">
               <BedDouble size={16} className="text-primary" aria-hidden="true" />
               <span>{property.bedrooms} beds</span>
@@ -109,7 +109,7 @@ export function QuickViewModal({ property, open, onClose }: QuickViewModalProps)
             </span>
           </div>
 
-          <p className="mt-4 line-clamp-4 text-sm leading-6 text-charcoal-soft">
+          <p className="mt-4 line-clamp-4 text-body text-charcoal-soft">
             {property.description}
           </p>
 
@@ -122,15 +122,15 @@ export function QuickViewModal({ property, open, onClose }: QuickViewModalProps)
               className="size-10 rounded-full object-cover ring-2 ring-primary-soft"
             />
             <div>
-              <p className="text-sm font-semibold text-charcoal">{agent.name}</p>
-              <p className="text-xs text-muted-foreground">{property.listedAt}</p>
+              <p className="text-caption font-semibold text-charcoal">{agent.name}</p>
+              <p className="text-caption text-muted-foreground">{property.listedAt}</p>
             </div>
           </div>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Link
               href={`/properties/${property.id}`}
-              className="flex-1 rounded-full bg-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+              className="flex-1 rounded-full bg-primary px-5 py-2.5 text-center text-caption font-semibold text-primary-foreground transition hover:bg-primary/90"
             >
               View full listing
             </Link>
@@ -138,7 +138,7 @@ export function QuickViewModal({ property, open, onClose }: QuickViewModalProps)
               propertyId={property.id}
               label={property.title}
               withText
-              className="flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-charcoal transition hover:border-primary hover:text-primary"
+              className="flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-caption font-semibold text-charcoal transition hover:border-primary hover:text-primary"
             />
           </div>
         </div>

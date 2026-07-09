@@ -16,7 +16,7 @@ export function SearchComponent({ compact = false }: SearchComponentProps) {
         compact ? "" : "sm:p-4"
       }`}
     >
-      <div className="mb-3 inline-grid grid-cols-2 gap-1 rounded-full bg-muted p-1 text-sm font-medium text-charcoal-soft">
+      <div className="mb-3 inline-grid grid-cols-2 gap-1 rounded-full bg-muted p-1 text-caption text-charcoal-soft">
         {(["buy", "rent"] as const).map((m) => (
           <label
             key={m}
@@ -50,7 +50,7 @@ export function SearchComponent({ compact = false }: SearchComponentProps) {
           <input
             name="location"
             placeholder="Suburb, postcode or address"
-            className="h-13 w-full rounded-xl border border-border bg-background pl-11 pr-3 py-3.5 text-sm text-charcoal outline-none transition placeholder:text-muted-foreground focus:border-primary focus:ring-4 focus:ring-primary/15"
+            className="h-13 w-full rounded-xl border border-border bg-background pl-11 pr-3 py-3.5 text-body text-charcoal outline-none transition placeholder:text-muted-foreground focus:border-primary focus:ring-4 focus:ring-primary/15"
           />
         </label>
 
@@ -58,7 +58,7 @@ export function SearchComponent({ compact = false }: SearchComponentProps) {
           <span className="sr-only">State</span>
           <select
             name="state"
-            className="h-13 w-full rounded-xl border border-border bg-background px-3 py-3.5 text-sm font-medium text-charcoal outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15"
+            className="h-13 w-full rounded-xl border border-border bg-background px-3 py-3.5 text-body font-medium text-charcoal outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15"
             defaultValue=""
           >
             <option value="">Any state</option>
@@ -72,7 +72,7 @@ export function SearchComponent({ compact = false }: SearchComponentProps) {
           <span className="sr-only">Property type</span>
           <select
             name="type"
-            className="h-13 w-full rounded-xl border border-border bg-background px-3 py-3.5 text-sm font-medium text-charcoal outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15"
+            className="h-13 w-full rounded-xl border border-border bg-background px-3 py-3.5 text-body font-medium text-charcoal outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15"
             defaultValue=""
           >
             <option value="">Any type</option>
@@ -84,7 +84,7 @@ export function SearchComponent({ compact = false }: SearchComponentProps) {
 
         <button
           type="submit"
-          className="group flex h-13 items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft transition hover:bg-primary/90 hover:shadow-luxury"
+          className="group flex h-13 items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-caption font-semibold text-primary-foreground shadow-soft transition hover:bg-primary/90 hover:shadow-luxury"
         >
           <Search size={17} aria-hidden="true" />
           Search

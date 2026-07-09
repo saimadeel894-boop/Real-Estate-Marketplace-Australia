@@ -54,7 +54,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="relative rounded-full px-4 py-2 text-sm font-medium text-charcoal-soft transition hover:text-primary"
+              className="relative rounded-full px-4 py-2 text-caption text-charcoal-soft transition hover:text-primary"
             >
               {link.label}
             </Link>
@@ -71,14 +71,14 @@ export function Navbar() {
           </Link>
           <Link
             href="/login"
-            className="hidden items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-medium text-charcoal transition hover:border-primary hover:text-primary sm:flex"
+            className="hidden items-center gap-2 rounded-full border border-border px-4 py-2 text-caption text-charcoal transition hover:border-primary hover:text-primary sm:flex"
           >
             <LogIn size={15} aria-hidden="true" />
             Sign in
           </Link>
           <Link
             href="/list-property"
-            className="hidden items-center gap-2 rounded-full bg-charcoal px-4 py-2.5 text-sm font-medium text-background shadow-soft transition hover:bg-primary md:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-charcoal px-4 py-2.5 text-caption text-background shadow-soft transition hover:bg-primary md:inline-flex"
           >
             List property
           </Link>
@@ -102,7 +102,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base font-medium text-charcoal-soft transition hover:bg-primary-soft hover:text-primary"
+                className="rounded-lg px-3 py-3 text-body font-medium text-charcoal-soft transition hover:bg-primary-soft hover:text-primary"
               >
                 {link.label}
               </Link>
@@ -110,7 +110,7 @@ export function Navbar() {
             <Link
               href="/list-property"
               onClick={() => setOpen(false)}
-              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
+              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-caption font-semibold text-primary-foreground"
             >
               List your property
             </Link>

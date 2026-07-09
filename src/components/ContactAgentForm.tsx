@@ -23,13 +23,13 @@ export function ContactAgentForm({ agent, property }: ContactAgentFormProps) {
       }}
     >
       <div className="rounded-lg bg-slate-50 p-4">
-        <p className="text-sm font-bold text-slate-950">Contact {agent.name}</p>
-        <p className="mt-1 text-sm text-slate-600">
+        <p className="text-caption font-semibold text-charcoal">Contact {agent.name}</p>
+        <p className="mt-1 text-caption text-charcoal-soft">
           {property ? `About ${property.title}` : "Ask about a listing, appraisal, or inspection."}
         </p>
       </div>
 
-      <label className="block text-sm font-semibold text-slate-700">
+      <label className="block text-caption font-semibold text-charcoal">
         Name
         <span className="relative mt-2 block">
           <User
@@ -48,7 +48,7 @@ export function ContactAgentForm({ agent, property }: ContactAgentFormProps) {
       </label>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="block text-sm font-semibold text-slate-700">
+        <label className="block text-caption font-semibold text-charcoal">
           Email
           <span className="relative mt-2 block">
             <Mail
@@ -65,7 +65,7 @@ export function ContactAgentForm({ agent, property }: ContactAgentFormProps) {
             />
           </span>
         </label>
-        <label className="block text-sm font-semibold text-slate-700">
+        <label className="block text-caption font-semibold text-charcoal">
           Phone
           <span className="relative mt-2 block">
             <Phone
@@ -84,7 +84,7 @@ export function ContactAgentForm({ agent, property }: ContactAgentFormProps) {
         </label>
       </div>
 
-      <label className="block text-sm font-semibold text-slate-700">
+      <label className="block text-caption font-semibold text-charcoal">
         Message
         <span className="relative mt-2 block">
           <MessageCircle
@@ -109,7 +109,7 @@ export function ContactAgentForm({ agent, property }: ContactAgentFormProps) {
       </label>
 
       {submitted ? (
-        <div className="flex items-start gap-2 rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-sm font-semibold text-emerald-800">
+        <div className="flex items-start gap-2 rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-caption font-semibold text-emerald-800">
           <CheckCircle2 size={18} className="mt-0.5 shrink-0" aria-hidden="true" />
           Enquiry validated locally. Backend email/CRM delivery can be connected later.
         </div>
@@ -117,7 +117,7 @@ export function ContactAgentForm({ agent, property }: ContactAgentFormProps) {
 
       <button
         type="submit"
-        className="flex h-12 w-full items-center justify-center gap-2 rounded-md bg-emerald-700 text-sm font-bold text-white transition hover:bg-emerald-800"
+        className="flex h-12 w-full items-center justify-center gap-2 rounded-md bg-emerald-700 text-caption font-semibold text-white transition hover:bg-emerald-800"
       >
         <Send size={18} aria-hidden="true" />
         Send enquiry

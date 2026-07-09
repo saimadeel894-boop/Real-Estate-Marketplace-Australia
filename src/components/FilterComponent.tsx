@@ -89,7 +89,7 @@ export function FilterComponent() {
 
       <form className="mt-5 space-y-5" onSubmit={handleApply}>
         <div className="grid grid-cols-2 gap-3">
-          <label className="text-sm font-semibold text-slate-700">
+          <label className="text-caption font-semibold text-charcoal">
             State
             <select
               value={state}
@@ -102,7 +102,7 @@ export function FilterComponent() {
               ))}
             </select>
           </label>
-          <label className="text-sm font-semibold text-slate-700">
+          <label className="text-caption font-semibold text-charcoal">
             Suburb
             <input
               placeholder="e.g. Mosman"
@@ -114,7 +114,7 @@ export function FilterComponent() {
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <label className="text-sm font-semibold text-slate-700">
+          <label className="text-caption font-semibold text-charcoal">
             Buy or Rent
             <select
               value={mode}
@@ -126,7 +126,7 @@ export function FilterComponent() {
             </select>
           </label>
 
-          <label className="text-sm font-semibold text-slate-700">
+          <label className="text-caption font-semibold text-charcoal">
             Property type
             <select
               value={propertyType}
@@ -142,7 +142,7 @@ export function FilterComponent() {
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <label className="text-sm font-semibold text-slate-700">
+          <label className="text-caption font-semibold text-charcoal">
             Min price
             <select
               value={minPrice}
@@ -168,7 +168,7 @@ export function FilterComponent() {
               )}
             </select>
           </label>
-          <label className="text-sm font-semibold text-slate-700">
+          <label className="text-caption font-semibold text-charcoal">
             Max price
             <select
               value={maxPrice}
@@ -197,7 +197,7 @@ export function FilterComponent() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold text-slate-700">Bedrooms</p>
+          <p className="text-caption font-semibold text-charcoal">Bedrooms</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {bedroomsList.map((item) => (
               <button
@@ -217,7 +217,7 @@ export function FilterComponent() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold text-slate-700">Bathrooms</p>
+          <p className="text-caption font-semibold text-charcoal">Bathrooms</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {bathroomsList.map((item) => (
               <button
@@ -238,7 +238,7 @@ export function FilterComponent() {
 
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <p className="text-sm font-semibold text-slate-700">Parking</p>
+            <p className="text-caption font-semibold text-charcoal">Parking</p>
             <div className="mt-2 flex gap-1">
               {parkingList.map((item) => (
                 <button
@@ -257,7 +257,7 @@ export function FilterComponent() {
             </div>
           </div>
 
-          <label className="text-sm font-semibold text-slate-700">
+          <label className="text-caption font-semibold text-charcoal">
             Min Land Size
             <input
               type="number"
