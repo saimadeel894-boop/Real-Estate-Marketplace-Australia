@@ -414,18 +414,19 @@ function Home() {
             {/* Gold CTA tile */}
             <Link
               href="/search"
-              className="group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-3xl bg-primary p-6 text-primary-foreground transition hover:-translate-y-1 sm:col-span-2 sm:p-8 md:col-span-2 md:row-span-1"
+              className="group relative col-span-1 flex flex-col justify-between gap-6 overflow-hidden rounded-3xl bg-primary p-5 text-primary-foreground transition hover:-translate-y-1 sm:col-span-2 sm:p-7 md:col-span-2 md:row-span-1 md:p-8"
             >
               <div className="flex justify-end">
                 <ArrowUpRight size={28} className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.28em]">Concierge</p>
-                <h3 className="mt-3 font-serif text-h3">
+                <h3 className="mt-2 font-serif text-h3 text-balance sm:mt-3">
                   Start your <em className="italic">private</em> search.
                 </h3>
               </div>
             </Link>
+
 
             {/* Property tile 2 */}
             {bento[1] && (
