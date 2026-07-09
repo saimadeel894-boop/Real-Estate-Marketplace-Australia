@@ -171,11 +171,11 @@ function AnimatedStat({ value, suffix, label }: (typeof stats)[number]) {
   const { value: v, ref } = useCountUp(value);
   return (
     <div className="border-l border-border/60 pl-6 first:border-l-0 first:pl-0">
-      <p className="font-serif text-5xl leading-none text-charcoal sm:text-6xl">
+      <p className="font-serif text-4xl leading-none text-charcoal sm:text-5xl md:text-6xl">
         <span ref={ref}>{v.toLocaleString()}</span>
         <span className="text-primary">{suffix}</span>
       </p>
-      <p className="mt-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">
+      <p className="mt-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs md:text-sm">
         {label}
       </p>
     </div>
