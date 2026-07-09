@@ -376,11 +376,11 @@ function Home() {
             </Link>
           </div>
 
-          <div className="mt-12 grid auto-rows-[260px] grid-cols-1 gap-4 md:grid-cols-4 md:grid-rows-2">
+          <div className="mt-12 grid auto-rows-[220px] grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 md:auto-rows-[240px] md:grid-cols-4 md:grid-rows-3 lg:auto-rows-[260px]">
             {/* Hero tile — large */}
             <Link
               href={`/properties/${bento[0].id}`}
-              className="group relative overflow-hidden rounded-3xl border border-primary/20 bg-[#1a1a1a] md:col-span-2 md:row-span-2"
+              className="group relative col-span-1 row-span-2 overflow-hidden rounded-3xl border border-primary/20 bg-[#1a1a1a] sm:col-span-2 md:col-span-2 md:row-span-2"
             >
               <Image
                 src={bento[0].images[0]}
@@ -413,7 +413,7 @@ function Home() {
             {/* Gold CTA tile */}
             <Link
               href="/search"
-              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-primary p-8 text-primary-foreground transition hover:-translate-y-1"
+              className="group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-3xl bg-primary p-6 text-primary-foreground transition hover:-translate-y-1 sm:col-span-2 sm:p-8 md:col-span-2 md:row-span-1"
             >
               <div className="flex justify-end">
                 <ArrowUpRight size={28} className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
@@ -452,7 +452,7 @@ function Home() {
             )}
 
             {/* Stat tile */}
-            <div className="relative flex flex-col items-center justify-center rounded-3xl border border-primary/25 bg-[#1a1a1a] p-8 text-center">
+            <div className="relative col-span-1 flex flex-col items-center justify-center rounded-3xl border border-primary/25 bg-[#1a1a1a] p-6 text-center sm:p-8 md:col-span-1 md:row-span-1">
               <span className="font-serif text-5xl italic text-primary sm:text-6xl">$2.4B</span>
               <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-background/60">
                 Transactions closed
@@ -493,13 +493,13 @@ function Home() {
             {bento[3] && (
               <Link
                 href={`/properties/${bento[3].id}`}
-                className="group relative overflow-hidden rounded-3xl border border-white/5 bg-[#1a1a1a]"
+                className="group relative col-span-1 overflow-hidden rounded-3xl border border-white/5 bg-[#1a1a1a] sm:col-span-2 md:col-span-3"
               >
                 <Image
                   src={bento[3].images[0]}
                   alt={bento[3].title}
                   fill
-                  sizes="(min-width: 768px) 25vw, 100vw"
+                  sizes="(min-width: 768px) 75vw, 100vw"
                   className="object-cover opacity-70 transition duration-700 group-hover:scale-110 group-hover:opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] to-transparent" />
