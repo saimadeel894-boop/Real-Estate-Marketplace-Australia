@@ -380,7 +380,7 @@ function Home() {
             {/* Hero tile — large */}
             <Link
               href={`/properties/${bento[0].id}`}
-              className="group relative overflow-hidden rounded-3xl border border-primary/20 bg-[#1a1a1a] md:col-span-2 md:row-span-2"
+              className="group relative col-span-1 row-span-2 overflow-hidden rounded-3xl border border-primary/20 bg-[#1a1a1a] sm:col-span-2 md:col-span-2 md:row-span-2"
             >
               <Image
                 src={bento[0].images[0]}
