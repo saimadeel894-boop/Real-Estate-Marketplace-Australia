@@ -302,18 +302,18 @@ function Home() {
             <SearchComponent />
           </div>
 
-          <div className="mt-14 grid w-full max-w-3xl grid-cols-3 gap-6 text-background/90">
+          <div className="mt-14 grid w-full max-w-3xl grid-cols-3 gap-4 text-background/90 sm:gap-6">
             <div>
-              <p className="font-serif text-3xl text-background">38k+</p>
-              <p className="text-xs uppercase tracking-widest text-background/70">Listings</p>
+              <p className="font-serif text-2xl text-background sm:text-3xl md:text-4xl">38k+</p>
+              <p className="text-[10px] uppercase tracking-widest text-background/70 sm:text-xs">Listings</p>
             </div>
             <div>
-              <p className="font-serif text-3xl text-background">720+</p>
-              <p className="text-xs uppercase tracking-widest text-background/70">Trusted agents</p>
+              <p className="font-serif text-2xl text-background sm:text-3xl md:text-4xl">720+</p>
+              <p className="text-[10px] uppercase tracking-widest text-background/70 sm:text-xs">Trusted agents</p>
             </div>
             <div>
-              <p className="font-serif text-3xl text-background">4.9★</p>
-              <p className="text-xs uppercase tracking-widest text-background/70">Client rating</p>
+              <p className="font-serif text-2xl text-background sm:text-3xl md:text-4xl">4.9★</p>
+              <p className="text-[10px] uppercase tracking-widest text-background/70 sm:text-xs">Client rating</p>
             </div>
           </div>
         </div>
