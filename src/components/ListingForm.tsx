@@ -17,7 +17,7 @@ export function ListingForm() {
         form.reportValidity();
       }}
     >
-      <label className="text-sm font-semibold text-slate-700">
+      <label className="text-caption font-semibold text-charcoal">
         Address
         <input
           required
@@ -28,7 +28,7 @@ export function ListingForm() {
       </label>
 
       <div className="grid gap-4 md:grid-cols-3">
-        <label className="text-sm font-semibold text-slate-700">
+        <label className="text-caption font-semibold text-charcoal">
           Property type
           <select
             name="propertyType"
@@ -39,7 +39,7 @@ export function ListingForm() {
             ))}
           </select>
         </label>
-        <label className="text-sm font-semibold text-slate-700">
+        <label className="text-caption font-semibold text-charcoal">
           State
           <select
             name="state"
@@ -50,7 +50,7 @@ export function ListingForm() {
             ))}
           </select>
         </label>
-        <label className="text-sm font-semibold text-slate-700">
+        <label className="text-caption font-semibold text-charcoal">
           Price
           <input
             required
@@ -70,7 +70,7 @@ export function ListingForm() {
           { name: "parking", label: "Parking" },
           { name: "landSize", label: "Land size" },
         ].map((field) => (
-          <label key={field.name} className="text-sm font-semibold text-slate-700">
+          <label key={field.name} className="text-caption font-semibold text-charcoal">
             {field.label}
             <input
               required
@@ -82,7 +82,7 @@ export function ListingForm() {
         ))}
       </div>
 
-      <label className="text-sm font-semibold text-slate-700">
+      <label className="text-caption font-semibold text-charcoal">
         Description
         <textarea
           required
@@ -98,13 +98,13 @@ export function ListingForm() {
         <div className="mx-auto flex size-12 items-center justify-center rounded-md bg-white text-emerald-800 shadow-sm">
           <ImagePlus size={24} aria-hidden="true" />
         </div>
-        <p className="mt-3 text-sm font-bold text-slate-950">Upload property images</p>
-        <p className="mt-1 text-sm text-slate-500">Drag and drop UI placeholder. Backend storage connects later.</p>
+        <p className="mt-3 text-caption font-semibold text-charcoal">Upload property images</p>
+        <p className="mt-1 text-caption text-muted-foreground">Drag and drop UI placeholder. Backend storage connects later.</p>
         <input className="sr-only" type="file" multiple accept="image/*" />
       </div>
 
       {submitted ? (
-        <div className="flex items-start gap-2 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm font-semibold text-emerald-800">
+        <div className="flex items-start gap-2 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-caption font-semibold text-emerald-800">
           <CheckCircle2 size={18} className="mt-0.5 shrink-0" aria-hidden="true" />
           Listing form is valid. Submission is intentionally frontend-only for this phase.
         </div>
@@ -112,7 +112,7 @@ export function ListingForm() {
 
       <button
         type="submit"
-        className="flex h-12 items-center justify-center gap-2 rounded-md bg-emerald-700 px-5 text-sm font-bold text-white transition hover:bg-emerald-800 sm:w-fit"
+        className="flex h-12 items-center justify-center gap-2 rounded-md bg-emerald-700 px-5 text-caption font-semibold text-white transition hover:bg-emerald-800 sm:w-fit"
       >
         <Upload size={18} aria-hidden="true" />
         Preview listing

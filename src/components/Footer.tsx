@@ -43,19 +43,19 @@ export function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-3" aria-label="Nestoria Australia home">
             <span className="flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <span className="font-serif text-2xl leading-none">N</span>
+              <span className="font-serif text-tile leading-none">N</span>
             </span>
             <span>
-              <span className="block font-serif text-2xl leading-none">Nestoria</span>
-              <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-primary">
+              <span className="block font-serif text-tile leading-none">Nestoria</span>
+              <span className="text-eyebrow text-primary">
                 Australia
               </span>
             </span>
           </Link>
-          <p className="mt-6 max-w-md font-serif text-2xl leading-snug text-background/85">
+          <p className="mt-6 max-w-md font-serif text-h3 text-background/85">
             Where Australia&rsquo;s most considered homes meet their next chapter.
           </p>
-          <div className="mt-8 space-y-3 text-sm text-background/70">
+          <div className="mt-8 space-y-3 text-caption text-background/70">
             <p className="flex items-center gap-3">
               <MapPin size={16} className="text-primary" aria-hidden="true" />
               Sydney &middot; Melbourne &middot; Brisbane &middot; Perth
@@ -74,7 +74,7 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-3">
           {footerGroups.map((group) => (
             <div key={group.title}>
-              <h2 className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+              <h2 className="text-eyebrow text-primary">
                 {group.title}
               </h2>
               <ul className="mt-5 space-y-3">
@@ -82,7 +82,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-background/75 transition hover:text-primary"
+                      className="text-caption text-background/75 transition hover:text-primary"
                     >
                       {link.label}
                     </Link>
@@ -95,7 +95,7 @@ export function Footer() {
       </div>
 
       <div className="relative border-t border-background/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-sm text-background/60 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-caption text-background/60 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>&copy; 2026 Nestoria Australia &mdash; Handcrafted for discerning homeowners.</p>
           <div className="flex items-center gap-2">
             {[Instagram, Twitter, Linkedin].map((Icon, i) => (

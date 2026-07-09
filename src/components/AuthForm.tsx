@@ -23,7 +23,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       }}
     >
       {isRegister ? (
-        <label className="block text-sm font-semibold text-slate-700">
+        <label className="block text-caption font-semibold text-charcoal">
           Full name
           <span className="relative mt-2 block">
             <User
@@ -42,7 +42,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         </label>
       ) : null}
 
-      <label className="block text-sm font-semibold text-slate-700">
+      <label className="block text-caption font-semibold text-charcoal">
         Email address
         <span className="relative mt-2 block">
           <Mail
@@ -61,7 +61,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       </label>
 
       {isRegister ? (
-        <label className="block text-sm font-semibold text-slate-700">
+        <label className="block text-caption font-semibold text-charcoal">
           Phone number
           <span className="relative mt-2 block">
             <Phone
@@ -81,7 +81,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       ) : null}
 
       <div className="flex items-center justify-between">
-        <label className="text-sm font-semibold text-slate-700" htmlFor="auth-password">
+        <label className="text-caption font-semibold text-charcoal" htmlFor="auth-password">
           Password
         </label>
         {!isRegister && (
@@ -111,7 +111,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       </span>
 
       {isRegister ? (
-        <label className="block text-sm font-semibold text-slate-700">
+        <label className="block text-caption font-semibold text-charcoal">
           Account type
           <select
             name="accountType"
@@ -140,7 +140,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         {isRegister ? "Create account" : "Login"}
       </button>
 
-      <p className="text-center text-sm text-slate-600">
+      <p className="text-center text-caption text-charcoal-soft">
         {isRegister ? "Already have an account?" : "New to Nestoria?"}{" "}
         <Link
           href={isRegister ? "/login" : "/register"}

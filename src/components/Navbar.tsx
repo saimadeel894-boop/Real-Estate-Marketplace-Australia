@@ -38,14 +38,15 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5" aria-label="Nestoria Australia home">
           <span className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft">
-            <span className="font-serif text-xl leading-none">N</span>
+            <span className="font-serif text-tile leading-none">N</span>
           </span>
           <span className="leading-tight">
-            <span className="block font-serif text-xl text-charcoal">Nestoria</span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-primary">
+            <span className="block font-serif text-tile text-charcoal">Nestoria</span>
+            <span className="text-eyebrow text-primary">
               Australia
             </span>
           </span>
+
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
@@ -53,7 +54,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="relative rounded-full px-4 py-2 text-sm font-medium text-charcoal-soft transition hover:text-primary"
+              className="relative rounded-full px-4 py-2 text-caption text-charcoal-soft transition hover:text-primary"
             >
               {link.label}
             </Link>
@@ -70,14 +71,14 @@ export function Navbar() {
           </Link>
           <Link
             href="/login"
-            className="hidden items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-medium text-charcoal transition hover:border-primary hover:text-primary sm:flex"
+            className="hidden items-center gap-2 rounded-full border border-border px-4 py-2 text-caption text-charcoal transition hover:border-primary hover:text-primary sm:flex"
           >
             <LogIn size={15} aria-hidden="true" />
             Sign in
           </Link>
           <Link
             href="/list-property"
-            className="hidden items-center gap-2 rounded-full bg-charcoal px-4 py-2.5 text-sm font-medium text-background shadow-soft transition hover:bg-primary md:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-charcoal px-4 py-2.5 text-caption text-background shadow-soft transition hover:bg-primary md:inline-flex"
           >
             List property
           </Link>
@@ -101,7 +102,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base font-medium text-charcoal-soft transition hover:bg-primary-soft hover:text-primary"
+                className="rounded-lg px-3 py-3 text-body font-medium text-charcoal-soft transition hover:bg-primary-soft hover:text-primary"
               >
                 {link.label}
               </Link>
@@ -109,7 +110,7 @@ export function Navbar() {
             <Link
               href="/list-property"
               onClick={() => setOpen(false)}
-              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
+              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-caption font-semibold text-primary-foreground"
             >
               List your property
             </Link>
