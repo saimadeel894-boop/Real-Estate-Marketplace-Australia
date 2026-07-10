@@ -15,12 +15,15 @@ type ListingFormProps = {
   existing?: Property;
 };
 
-const propertyTypeMap: Record<string, PropertyInput["property_type"]> = {
+type DbPropertyType = "house" | "apartment" | "townhouse" | "land" | "rural";
+type DbState = "ACT" | "NSW" | "NT" | "QLD" | "SA" | "TAS" | "VIC" | "WA";
+
+const propertyTypeMap: Record<string, DbPropertyType> = {
   House: "house",
   Apartment: "apartment",
   Townhouse: "townhouse",
   Land: "land",
-  "New development": "new_development",
+  "New development": "house",
 };
 
 export function ListingForm({ existing }: ListingFormProps) {
