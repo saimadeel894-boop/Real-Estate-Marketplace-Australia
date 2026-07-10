@@ -51,7 +51,7 @@ export function ListingForm({ existing }: ListingFormProps) {
         listing_type: listingType,
         property_type: propertyTypeMap[propertyTypeLabel] ?? "house",
         price_cents: Math.round(Number(fd.get("price") || 0) * 100),
-        rent_period: listingType === "rent" ? "weekly" : null,
+        rent_period: listingType === "rent" ? "week" : null,
         address_line: String(fd.get("address") || "").trim(),
         suburb: String(fd.get("suburb") || "").trim(),
         state: String(fd.get("state") || "NSW"),

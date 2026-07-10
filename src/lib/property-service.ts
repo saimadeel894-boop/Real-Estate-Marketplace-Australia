@@ -48,7 +48,7 @@ function formatPrice(cents: number, listingType: string, rentPeriod: string | nu
   const price = Math.round(cents / 100);
   const formatted = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD", maximumFractionDigits: 0 }).format(price);
   if (listingType === "rent") {
-    const period = rentPeriod === "monthly" ? "per month" : "per week";
+    const period = rentPeriod === "month" ? "per month" : "per week";
     return { price, label: `${formatted} ${period}` };
   }
   return { price, label: formatted };
@@ -237,7 +237,7 @@ export type PropertyInput = {
   listing_type: "sale" | "rent";
   property_type: DbPropertyType;
   price_cents: number;
-  rent_period?: "weekly" | "monthly" | null;
+  rent_period?: "week" | "month" | null;
   address_line: string;
   suburb: string;
   state: DbState;
