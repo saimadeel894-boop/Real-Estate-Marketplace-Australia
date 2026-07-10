@@ -57,7 +57,7 @@ export function ListingForm({ existing }: ListingFormProps) {
         rent_period: listingType === "rent" ? "week" : null,
         address_line: String(fd.get("address") || "").trim(),
         suburb: String(fd.get("suburb") || "").trim(),
-        state: String(fd.get("state") || "NSW"),
+        state: String(fd.get("state") || "NSW") as DbState,
         postcode: String(fd.get("postcode") || "").trim(),
         bedrooms: Number(fd.get("bedrooms") || 0),
         bathrooms: Number(fd.get("bathrooms") || 0),
