@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy | Nestoria Australia" },
-      { name: "description", content: "How Nestoria Australia collects, uses, and protects your personal information." },
-      { property: "og:title", content: "Privacy Policy | Nestoria Australia" },
+      { title: "Privacy Policy | Real Estate Marketplace Australia" },
+      { name: "description", content: "How Real Estate Marketplace Australia collects, uses, and protects your personal information." },
+      { property: "og:title", content: "Privacy Policy | Real Estate Marketplace Australia" },
       { property: "og:description", content: "Our privacy practices for buyers, renters, sellers, and agents." },
     ],
   }),
@@ -39,7 +39,7 @@ const sections = [
   },
   {
     title: "Contact us",
-    body: "For questions about this policy, contact our privacy team at privacy@nestoria.example or write to Nestoria Australia, Level 12, 1 Market Street, Sydney NSW 2000.",
+    body: "For questions about this policy, contact our privacy team at privacy@nestoria.example or write to Real Estate Marketplace Australia, Level 12, 1 Market Street, Sydney NSW 2000.",
   },
 ];
 
@@ -50,8 +50,8 @@ function PrivacyPage() {
       <h1 className="mt-3 font-serif text-4xl leading-tight text-charcoal sm:text-5xl">Privacy Policy</h1>
       <p className="mt-4 text-sm text-muted-foreground">Last updated: 1 July 2026</p>
       <p className="mt-6 leading-7 text-charcoal-soft">
-        This Privacy Policy explains how Nestoria Australia ("we", "us") collects and handles personal information
-        when you use our property marketplace. This page is maintained by Nestoria Australia and describes our
+        This Privacy Policy explains how Real Estate Marketplace Australia ("we", "us") collects and handles personal information
+        when you use our property marketplace. This page is maintained by Real Estate Marketplace Australia and describes our
         current practices; it is not a legal certification.
       </p>
       <div className="mt-10 space-y-8">

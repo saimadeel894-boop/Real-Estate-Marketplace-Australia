@@ -11,7 +11,7 @@ import {
 
 export const Route = createFileRoute("/agencies/$id")({
   head: ({ params }) => ({
-    meta: [{ title: "Agency | Nestoria" }],
+    meta: [{ title: "Agency | Real Estate Marketplace" }],
     links: [{ rel: "canonical", href: `/agencies/${params.id}` }],
   }),
   component: AgencyPage,

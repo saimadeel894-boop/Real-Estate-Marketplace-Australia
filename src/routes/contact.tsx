@@ -5,8 +5,8 @@ import { ContactForm } from "@/components/ContactForm";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact | Nestoria Australia" },
-      { name: "description", content: "Get in touch with the Nestoria Australia team." },
+      { title: "Contact | Real Estate Marketplace Australia" },
+      { name: "description", content: "Get in touch with the Real Estate Marketplace Australia team." },
     ],
   }),
   component: Contact,

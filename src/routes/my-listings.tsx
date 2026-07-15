@@ -14,8 +14,8 @@ const PER_PAGE = 6;
 export const Route = createFileRoute("/my-listings")({
   head: () => ({
     meta: [
-      { title: "My listings | Nestoria Australia" },
-      { name: "description", content: "Manage the properties you have listed on Nestoria Australia." },
+      { title: "My listings | Real Estate Marketplace Australia" },
+      { name: "description", content: "Manage the properties you have listed on Real Estate Marketplace Australia." },
     ],
   }),
   component: MyListingsPage,

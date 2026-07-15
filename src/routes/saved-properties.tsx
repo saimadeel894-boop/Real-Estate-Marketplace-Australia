@@ -15,10 +15,10 @@ const PER_PAGE = 9;
 export const Route = createFileRoute("/saved-properties")({
   head: () => ({
     meta: [
-      { title: "Saved properties | Nestoria" },
-      { name: "description", content: "View and search your saved Australian properties on Nestoria." },
-      { property: "og:title", content: "Saved properties | Nestoria" },
-      { property: "og:description", content: "View and search your saved Australian properties on Nestoria." },
+      { title: "Saved properties | Real Estate Marketplace" },
+      { name: "description", content: "View and search your saved Australian properties on Real Estate Marketplace." },
+      { property: "og:title", content: "Saved properties | Real Estate Marketplace" },
+      { property: "og:description", content: "View and search your saved Australian properties on Real Estate Marketplace." },
       { property: "og:url", content: "/saved-properties" },
     ],
     links: [{ rel: "canonical", href: "/saved-properties" }],

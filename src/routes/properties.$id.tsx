@@ -36,7 +36,7 @@ const TESTIMONIAL_TEMPLATES: Array<Omit<PropertyTestimonial, "body"> & { body: (
     rating: 5,
     datePublished: "2026-03-02",
     body: (suburb) =>
-      `Beautifully presented home in a quiet pocket of ${suburb}. The Nestoria team ran a considered, calm campaign — refreshing compared with other portals.`,
+      `Beautifully presented home in a quiet pocket of ${suburb}. The Real Estate Marketplace team ran a considered, calm campaign — refreshing compared with other portals.`,
   },
   {
     author: "Priya Anand",
@@ -70,7 +70,7 @@ export const Route = createFileRoute("/properties/$id")({
     const description = property.description?.slice(0, 155) ?? "Property details";
     return {
       meta: [
-        { title: `${property.title} | Nestoria` },
+        { title: `${property.title} | Real Estate Marketplace` },
         { name: "description", content: description },
         { property: "og:title", content: property.title },
         { property: "og:description", content: description },

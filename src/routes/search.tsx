@@ -13,9 +13,9 @@ const PER_PAGE = 8;
 export const Route = createFileRoute("/search")({
   head: () => ({
     meta: [
-      { title: "Search properties | Nestoria Australia" },
+      { title: "Search properties | Real Estate Marketplace Australia" },
       { name: "description", content: "Search homes for sale and rent across Australia." },
-      { property: "og:title", content: "Search properties | Nestoria Australia" },
+      { property: "og:title", content: "Search properties | Real Estate Marketplace Australia" },
       { property: "og:description", content: "Search homes for sale and rent across Australia." },
       { property: "og:url", content: "/search" },
     ],

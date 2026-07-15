@@ -4,7 +4,7 @@ import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/forgot-password")({
-  head: () => ({ meta: [{ title: "Reset password | Nestoria" }] }),
+  head: () => ({ meta: [{ title: "Reset password | Real Estate Marketplace" }] }),
   component: ForgotPassword,
 });
 

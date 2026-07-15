@@ -83,14 +83,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nestoria Australia | Property Marketplace" },
+      { title: "Real Estate Marketplace Australia | Property Marketplace" },
       {
         name: "description",
         content:
           "A modern Australian real estate marketplace for buying, renting, listing, and discovering properties.",
       },
-      { name: "author", content: "Nestoria Australia" },
-      { property: "og:title", content: "Nestoria Australia | Property Marketplace" },
+      { name: "author", content: "Real Estate Marketplace Australia" },
+      { property: "og:title", content: "Real Estate Marketplace Australia | Property Marketplace" },
       {
         property: "og:description",
         content:
@@ -118,7 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "Nestoria Australia",
+          name: "Real Estate Marketplace Australia",
           url: "/",
           logo: "/favicon.ico",
           description:
@@ -146,11 +146,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           "@id": "https://project--a0d96297-61d4-4523-ae1a-a95bf868e3f0.lovable.app/#website",
-          name: "Nestoria Australia",
-          alternateName: "Nestoria AU",
+          name: "Real Estate Marketplace Australia",
+          alternateName: "REM Australia",
           url: "https://project--a0d96297-61d4-4523-ae1a-a95bf868e3f0.lovable.app/",
           inLanguage: "en-AU",
-          publisher: { "@type": "Organization", name: "Nestoria Australia" },
+          publisher: { "@type": "Organization", name: "Real Estate Marketplace Australia" },
           potentialAction: [
             {
               "@type": "SearchAction",
@@ -184,10 +184,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           mainEntity: [
             {
               "@type": "Question",
-              name: "Is Nestoria Australia free to use for buyers and renters?",
+              name: "Is Real Estate Marketplace Australia free to use for buyers and renters?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes. Browsing listings, saving properties, contacting agents and booking inspections on Nestoria Australia is completely free for buyers and renters.",
+                text: "Yes. Browsing listings, saving properties, contacting agents and booking inspections on Real Estate Marketplace Australia is completely free for buyers and renters.",
               },
             },
             {
@@ -203,7 +203,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               name: "Which Australian cities and suburbs are covered?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Nestoria covers every capital city — Sydney, Melbourne, Brisbane, Perth, Adelaide, Hobart, Darwin and Canberra — plus major regional centres across NSW, VIC, QLD, WA, SA, TAS, NT and ACT.",
+                text: "Real Estate Marketplace covers every capital city — Sydney, Melbourne, Brisbane, Perth, Adelaide, Hobart, Darwin and Canberra — plus major regional centres across NSW, VIC, QLD, WA, SA, TAS, NT and ACT.",
               },
             },
             {
@@ -211,7 +211,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               name: "How do I contact a listing agent?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Every property detail page includes the listing agent's profile, phone number and an enquiry form. Messages are delivered to the agent instantly and copied to your Nestoria inbox.",
+                text: "Every property detail page includes the listing agent's profile, phone number and an enquiry form. Messages are delivered to the agent instantly and copied to your Real Estate Marketplace inbox.",
               },
             },
             {
@@ -227,7 +227,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               name: "How are listings verified?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Every listing is submitted by a verified agent or vendor and quality-checked by the Nestoria team for accurate address, price, photography and inspection details before going live.",
+                text: "Every listing is submitted by a verified agent or vendor and quality-checked by the Real Estate Marketplace team for accurate address, price, photography and inspection details before going live.",
               },
             },
           ],

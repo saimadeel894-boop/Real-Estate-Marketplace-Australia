@@ -41,12 +41,12 @@ export function Footer() {
       />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.3fr_2fr] lg:px-8">
         <div>
-          <Link href="/" className="flex items-center gap-3" aria-label="Nestoria Australia home">
+          <Link href="/" className="flex items-center gap-3" aria-label="Real Estate Marketplace Australia home">
             <span className="flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <span className="font-serif text-tile leading-none">N</span>
+              <span className="font-serif text-tile leading-none">R</span>
             </span>
             <span>
-              <span className="block font-serif text-tile leading-none">Nestoria</span>
+              <span className="block font-serif text-tile leading-none">Real Estate Marketplace</span>
               <span className="text-eyebrow text-primary">
                 Australia
               </span>
@@ -96,7 +96,7 @@ export function Footer() {
 
       <div className="relative border-t border-background/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-caption text-background/60 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <p>&copy; 2026 Nestoria Australia &mdash; Handcrafted for discerning homeowners.</p>
+          <p>&copy; 2026 Real Estate Marketplace Australia &mdash; Handcrafted for discerning homeowners.</p>
           <div className="flex items-center gap-2">
             {[Instagram, Twitter, Linkedin].map((Icon, i) => (
               <a

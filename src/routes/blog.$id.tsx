@@ -5,7 +5,7 @@ import { fetchBlogBySlug } from "@/lib/directory-service";
 
 export const Route = createFileRoute("/blog/$id")({
   head: ({ params }) => ({
-    meta: [{ title: `Article | Nestoria Blog` }, { property: "og:type", content: "article" }],
+    meta: [{ title: `Article | Real Estate Marketplace Blog` }, { property: "og:type", content: "article" }],
     links: [{ rel: "canonical", href: `/blog/${params.id}` }],
   }),
   component: Post,
