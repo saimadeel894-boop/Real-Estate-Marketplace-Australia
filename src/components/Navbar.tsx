@@ -40,16 +40,21 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex items-center gap-3" aria-label="Real Estate Marketplace Australia home">
-          <span className="relative flex size-11 items-center justify-center rounded-sm border border-primary/40 bg-gradient-to-br from-primary/10 to-transparent text-primary transition-all duration-300 group-hover:border-primary group-hover:from-primary/20">
-            <span className="font-serif text-h3 italic leading-none tracking-tight">R</span>
+        <Link href="/" className="group flex min-w-0 items-center gap-2 sm:gap-3" aria-label="Real Estate Marketplace Australia home">
+          <span className="relative flex size-9 shrink-0 items-center justify-center rounded-sm border border-primary/40 bg-gradient-to-br from-primary/10 to-transparent text-primary transition-all duration-300 group-hover:border-primary group-hover:from-primary/20 sm:size-11">
+            <span className="font-serif text-lg italic leading-none tracking-tight sm:text-h3">R</span>
             <span className="absolute -bottom-0.5 -right-0.5 size-1.5 rounded-full bg-primary" aria-hidden="true" />
           </span>
-          <span className="leading-tight">
-            <span className="block font-serif text-tile text-charcoal tracking-tight">
+          <span className="min-w-0 leading-tight">
+            {/* Mobile: compact wordmark */}
+            <span className="block font-serif text-base text-charcoal tracking-tight sm:hidden">
+              R<span className="italic text-primary">E</span>M<span className="text-charcoal/50"> · AU</span>
+            </span>
+            {/* Tablet & up: full wordmark */}
+            <span className="hidden font-serif text-tile text-charcoal tracking-tight sm:block">
               Real <span className="italic text-primary">Estate</span> Marketplace
             </span>
-            <span className="mt-0.5 block text-[0.65rem] font-medium uppercase tracking-[0.28em] text-charcoal/60">
+            <span className="mt-0.5 hidden text-[0.65rem] font-medium uppercase tracking-[0.28em] text-charcoal/60 sm:block">
               — Australia
             </span>
           </span>
