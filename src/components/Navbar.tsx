@@ -42,7 +42,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5" aria-label="Real Estate Marketplace Australia home">
           <span className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft">
-            <span className="font-serif text-tile leading-none">N</span>
+            <span className="font-serif text-tile leading-none">R</span>
           </span>
           <span className="leading-tight">
             <span className="block font-serif text-tile text-charcoal">Real Estate Marketplace</span>

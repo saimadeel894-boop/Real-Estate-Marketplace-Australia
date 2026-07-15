@@ -43,7 +43,7 @@ export function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-3" aria-label="Real Estate Marketplace Australia home">
             <span className="flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <span className="font-serif text-tile leading-none">N</span>
+              <span className="font-serif text-tile leading-none">R</span>
             </span>
             <span>
               <span className="block font-serif text-tile leading-none">Real Estate Marketplace</span>
