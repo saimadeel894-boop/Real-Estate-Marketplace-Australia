@@ -6,7 +6,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { fetchPropertyById } from "@/lib/property-service";
 
 export const Route = createFileRoute("/edit-property/$id")({
-  head: () => ({ meta: [{ title: "Edit listing | Nestoria" }] }),
+  head: () => ({ meta: [{ title: "Edit listing | Real Estate Marketplace" }] }),
   component: EditPage,
 });
 

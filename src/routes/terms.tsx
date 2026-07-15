@@ -3,10 +3,10 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms & Conditions | Nestoria Australia" },
-      { name: "description", content: "The terms that govern your use of the Nestoria Australia marketplace." },
-      { property: "og:title", content: "Terms & Conditions | Nestoria Australia" },
-      { property: "og:description", content: "Rules for buyers, renters, sellers, and agents using Nestoria Australia." },
+      { title: "Terms & Conditions | Real Estate Marketplace Australia" },
+      { name: "description", content: "The terms that govern your use of the Real Estate Marketplace Australia marketplace." },
+      { property: "og:title", content: "Terms & Conditions | Real Estate Marketplace Australia" },
+      { property: "og:description", content: "Rules for buyers, renters, sellers, and agents using Real Estate Marketplace Australia." },
     ],
   }),
   component: TermsPage,
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/terms")({
 const sections = [
   {
     title: "Acceptance of terms",
-    body: "By accessing or using Nestoria Australia you agree to these terms. If you do not agree, please do not use the service.",
+    body: "By accessing or using Real Estate Marketplace Australia you agree to these terms. If you do not agree, please do not use the service.",
   },
   {
     title: "Using the marketplace",
@@ -31,15 +31,15 @@ const sections = [
   },
   {
     title: "Intellectual property",
-    body: "All Nestoria branding, design, and code are our property. Listing content remains the property of the person who submitted it, who grants us a licence to display it on the marketplace.",
+    body: "All Real Estate Marketplace branding, design, and code are our property. Listing content remains the property of the person who submitted it, who grants us a licence to display it on the marketplace.",
   },
   {
     title: "Disclaimers",
-    body: "Nestoria Australia is a marketplace connecting buyers, renters, sellers, and agents. We do not own the properties listed and do not provide legal, financial, or valuation advice. Always seek professional advice before making a property decision.",
+    body: "Real Estate Marketplace Australia is a marketplace connecting buyers, renters, sellers, and agents. We do not own the properties listed and do not provide legal, financial, or valuation advice. Always seek professional advice before making a property decision.",
   },
   {
     title: "Limitation of liability",
-    body: "To the fullest extent permitted by Australian law, Nestoria Australia is not liable for indirect or consequential loss arising from your use of the platform, including reliance on listing information provided by third parties.",
+    body: "To the fullest extent permitted by Australian law, Real Estate Marketplace Australia is not liable for indirect or consequential loss arising from your use of the platform, including reliance on listing information provided by third parties.",
   },
   {
     title: "Changes to these terms",
@@ -58,7 +58,7 @@ function TermsPage() {
       <h1 className="mt-3 font-serif text-4xl leading-tight text-charcoal sm:text-5xl">Terms & Conditions</h1>
       <p className="mt-4 text-sm text-muted-foreground">Last updated: 1 July 2026</p>
       <p className="mt-6 leading-7 text-charcoal-soft">
-        These terms govern your access to and use of Nestoria Australia. Please read them carefully.
+        These terms govern your access to and use of Real Estate Marketplace Australia. Please read them carefully.
       </p>
       <div className="mt-10 space-y-8">
         {sections.map((s) => (

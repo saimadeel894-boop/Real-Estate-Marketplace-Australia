@@ -29,13 +29,13 @@ import { fetchPublishedProperties } from "@/lib/property-service";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nestoria Australia — Luxury Property Marketplace" },
+      { title: "Real Estate Marketplace Australia — Luxury Property Marketplace" },
       {
         name: "description",
         content:
           "Discover Australia's most considered homes. A premium marketplace to buy, rent, and list distinctive properties across every capital city.",
       },
-      { property: "og:title", content: "Nestoria Australia — Luxury Property Marketplace" },
+      { property: "og:title", content: "Real Estate Marketplace Australia — Luxury Property Marketplace" },
       {
         property: "og:description",
         content:
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "Nestoria Australia",
+          name: "Real Estate Marketplace Australia",
           url: "/",
           aggregateRating: {
             "@type": "AggregateRating",
@@ -71,7 +71,7 @@ export const Route = createFileRoute("/")({
             reviewBody: t.quote,
             itemReviewed: {
               "@type": "Organization",
-              name: "Nestoria Australia",
+              name: "Real Estate Marketplace Australia",
             },
           })),
         }),
@@ -109,7 +109,7 @@ const stats = [
 const testimonials = [
   {
     quote:
-      "Nestoria felt like a private concierge. The photography, the shortlist, the calm agents — it was the first time home hunting felt considered.",
+      "Real Estate Marketplace felt like a private concierge. The photography, the shortlist, the calm agents — it was the first time home hunting felt considered.",
     name: "Isabelle & Marcus",
     role: "Bought in Mosman, NSW",
     image:
@@ -301,7 +301,7 @@ function Home() {
                 href="/list-property"
                 className="inline-flex items-center gap-2 rounded-full border border-background/30 bg-background/10 px-8 py-4 text-sm font-semibold text-background backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-background/20"
               >
-                List with Nestoria
+                List with Real Estate Marketplace
               </Link>
             </div>
           </div>
@@ -566,7 +566,7 @@ function Home() {
                 Australia&rsquo;s most distinctive residences, presented with intention.
               </h2>
               <p className="mt-5 text-base leading-8 text-background/75">
-                Each home in the Nestoria collection is presented with editorial photography,
+                Each home in the Real Estate Marketplace collection is presented with editorial photography,
                 floor-plan clarity, and neighbourhood context &mdash; so buyers arrive ready.
               </p>
 
@@ -833,7 +833,7 @@ function Home() {
             <div className="relative grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-                  — The Nestoria Letter
+                  — The Real Estate Marketplace Letter
                 </p>
                 <h2 className="mt-4 font-serif text-h2 text-background">
                   New listings, quietly delivered.

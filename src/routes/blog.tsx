@@ -6,7 +6,7 @@ import { fetchBlogs } from "@/lib/directory-service";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog | Nestoria Australia" },
+      { title: "Blog | Real Estate Marketplace Australia" },
       { name: "description", content: "Property market insights, buyer guides, and seller tips." },
     ],
   }),
@@ -24,7 +24,7 @@ function Blog() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
       <h1 className="text-4xl font-bold text-slate-950">Insights & guides</h1>
-      <p className="mt-2 text-slate-600">The latest from the Nestoria editorial team.</p>
+      <p className="mt-2 text-slate-600">The latest from the Real Estate Marketplace editorial team.</p>
       {isLoading ? (
         <p className="mt-10 text-slate-500">Loading articles…</p>
       ) : posts.length === 0 ? (

@@ -145,7 +145,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       </button>
 
       <p className="text-center text-caption text-charcoal-soft">
-        {isRegister ? "Already have an account?" : "New to Nestoria?"}{" "}
+        {isRegister ? "Already have an account?" : "New to Real Estate Marketplace?"}{" "}
         <Link href={isRegister ? "/login" : "/register"} className="font-bold text-emerald-800 hover:text-emerald-900">
           {isRegister ? "Login" : "Create an account"}
         </Link>

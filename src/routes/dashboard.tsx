@@ -5,7 +5,7 @@ import { DashboardSidebar } from "@/components/DashboardSidebar";
 import { useAuth } from "@/hooks/use-auth";
 
 export const Route = createFileRoute("/dashboard")({
-  head: () => ({ meta: [{ title: "Dashboard | Nestoria Australia" }] }),
+  head: () => ({ meta: [{ title: "Dashboard | Real Estate Marketplace Australia" }] }),
   component: Dashboard,
 });
 

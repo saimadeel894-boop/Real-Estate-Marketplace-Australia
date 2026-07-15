@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/reset-password")({
-  head: () => ({ meta: [{ title: "Set new password | Nestoria" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Set new password | Real Estate Marketplace" }, { name: "robots", content: "noindex" }] }),
   component: ResetPassword,
 });
 
@@ -48,7 +48,7 @@ function ResetPassword() {
   return (
     <div className="mx-auto max-w-md px-4 py-16">
       <h1 className="mb-2 text-3xl font-bold text-slate-950">Set a new password</h1>
-      <p className="mb-6 text-slate-600">Choose a strong password to secure your Nestoria account.</p>
+      <p className="mb-6 text-slate-600">Choose a strong password to secure your Real Estate Marketplace account.</p>
       {done ? (
         <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-5 text-emerald-900">
           Password updated. Redirecting to your dashboard…

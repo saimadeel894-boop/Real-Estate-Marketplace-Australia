@@ -7,7 +7,7 @@ import { fetchAgencyById, fetchAgentBySlug, fetchPropertiesByAgent } from "@/lib
 
 export const Route = createFileRoute("/agents/$id")({
   head: ({ params }) => ({
-    meta: [{ title: "Agent | Nestoria" }],
+    meta: [{ title: "Agent | Real Estate Marketplace" }],
     links: [{ rel: "canonical", href: `/agents/${params.id}` }],
   }),
   component: AgentPage,

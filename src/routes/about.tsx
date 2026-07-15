@@ -4,8 +4,8 @@ import { Building2, Shield, TrendingUp, Users } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About | Nestoria Australia" },
-      { name: "description", content: "Learn about Nestoria Australia — a modern property marketplace." },
+      { title: "About | Real Estate Marketplace Australia" },
+      { name: "description", content: "Learn about Real Estate Marketplace Australia — a modern property marketplace." },
     ],
   }),
   component: About,
@@ -23,7 +23,7 @@ function About() {
     <div>
       <section className="bg-slate-950 py-20 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="text-sm font-bold uppercase tracking-widest text-emerald-300">About Nestoria</p>
+          <p className="text-sm font-bold uppercase tracking-widest text-emerald-300">About Real Estate Marketplace</p>
           <h1 className="mt-3 text-4xl font-bold sm:text-5xl">Making Australian property simple.</h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-slate-200">
             We're building the property marketplace we always wanted — clear, fast, and honest.

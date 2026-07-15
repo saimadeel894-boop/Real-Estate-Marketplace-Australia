@@ -4,7 +4,7 @@ import { ListingForm } from "@/components/ListingForm";
 import { useAuth } from "@/hooks/use-auth";
 
 export const Route = createFileRoute("/list-property")({
-  head: () => ({ meta: [{ title: "List your property | Nestoria" }] }),
+  head: () => ({ meta: [{ title: "List your property | Real Estate Marketplace" }] }),
   component: ListProperty,
 });
 
